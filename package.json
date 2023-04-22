@@ -2,7 +2,9 @@
   "name": "ewallet-onboarding",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/cli": "^15.9.2",
@@ -12,7 +14,9 @@
     "@nrwl/workspace": "15.9.2",
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/ui": "^0.25.8",
+    "husky": "^8.0.0",
     "jsdom": "~20.0.3",
+    "lint-staged": "^13.2.1",
     "nx": "15.9.2",
     "prettier": "^2.6.2",
     "typescript": "~4.9.5",
@@ -21,5 +25,9 @@
     "vite-tsconfig-paths": "^4.0.2",
     "vitest": "^0.25.8"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.1"
+  }
 }
