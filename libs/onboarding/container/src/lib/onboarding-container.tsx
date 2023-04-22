@@ -52,7 +52,7 @@ export function OnboardingContainer() {
             gutterBottom
             sx={{ marginTop: '1rem' }}
           >
-            {steps[activeStep].label}
+            {steps[activeStep].description}
           </Typography>
           {/* ... (StepComponent, Suspense, and Buttons) */}
           <Suspense fallback={<div>Loading...</div>}>

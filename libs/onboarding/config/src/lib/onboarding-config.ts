@@ -5,7 +5,19 @@ const StepB = lazy(() => import('@ewallet-onboarding/onboarding/step-b'));
 const StepC = lazy(() => import('@ewallet-onboarding/onboarding/step-c'));
 
 export const steps = [
-  { label: 'Fill in your basic information', component: StepA },
-  { label: 'Tell us more about yourself', component: StepB },
-  { label: 'Almost there, choose your e-wallet purpose', component: StepC },
+  {
+    label: 'Basic Information',
+    component: StepA,
+    description: 'Fill in your basic information',
+  },
+  {
+    label: 'Additional Information',
+    component: StepB,
+    description: 'Tell us more about yourself',
+  },
+  {
+    label: 'Purpose',
+    component: StepC,
+    description: 'Almost there, choose your e-wallet purpose',
+  },
 ];

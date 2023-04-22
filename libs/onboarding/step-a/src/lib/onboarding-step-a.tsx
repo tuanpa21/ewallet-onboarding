@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Box, FormControl, TextField } from '@mui/material';
+import { Box, Button, FormControl, TextField } from '@mui/material';
 import { useOnboardingStore } from '@ewallet-onboarding/onboarding/store';
 
 const schema = yup.object().shape({
@@ -16,15 +16,15 @@ interface StepAFormInputs {
 }
 
 export function OnboardingStepA() {
+  const { setData, onNext, stepA } = useOnboardingStore();
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<StepAFormInputs>({
     resolver: yupResolver(schema),
+    defaultValues: stepA,
   });
-
-  const { setData, onNext } = useOnboardingStore();
 
   const onSubmit = (data: StepAFormInputs) => {
     setData('stepA', data);
@@ -67,7 +67,16 @@ export function OnboardingStepA() {
           )}
         />
       </FormControl>
-      {/* Add buttons or other form elements as needed */}
+
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        fullWidth
+        sx={{ marginTop: '1rem' }}
+      >
+        Next
+      </Button>
     </Box>
   );
 }
