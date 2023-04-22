@@ -1,9 +1,13 @@
 import { Suspense, useState } from 'react';
 
 import { Box, Button, Typography } from '@mui/material';
-import { steps } from '@ewallet-onboarding/onboarding/config';
+import {
+  steps,
+  useOnboardingStore,
+} from '@ewallet-onboarding/onboarding/config';
 
 export function OnboardingContainer() {
+  const onboardingData = useOnboardingStore((state) => state);
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
