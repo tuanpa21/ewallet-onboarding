@@ -1,1 +1,1 @@
-export * from './lib/onboarding-step-b';
+export { default } from './lib/onboarding-step-b';
