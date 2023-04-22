@@ -25,7 +25,7 @@ const purposes = [
 ];
 
 export function OnboardingStepC() {
-  const { setData, onNext, onBack, stepC } = useOnboardingStore();
+  const { setData, onComplete, onBack, stepC } = useOnboardingStore();
   const { control, handleSubmit } = useForm<StepCFormInputs>({
     defaultValues: {
       purposes: Object.fromEntries(
@@ -40,7 +40,7 @@ export function OnboardingStepC() {
       .map(([key]) => key);
 
     setData('stepC', { purposes: selectedPurposes });
-    onNext();
+    onComplete();
   };
 
   return (
@@ -71,8 +71,10 @@ export function OnboardingStepC() {
       </FormControl>
 
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Button onClick={onBack}>Back</Button>
-        <Button type="submit" variant="contained" color="primary">
+        <Button onClick={onBack} fullWidth>
+          Back
+        </Button>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
           Finish
         </Button>
       </Box>
