@@ -29,6 +29,9 @@
       ],
       "@ewallet-onboarding/onboarding/step-c": [
         "libs/onboarding/step-c/src/index.ts"
+      ],
+      "@ewallet-onboarding/onboarding/store": [
+        "libs/onboarding/store/src/index.ts"
       ]
     }
   },
