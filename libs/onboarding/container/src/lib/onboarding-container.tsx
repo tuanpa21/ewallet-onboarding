@@ -1,6 +1,14 @@
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 
-import { Box, Button, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Step,
+  StepLabel,
+  Stepper,
+  Typography,
+} from '@mui/material';
 import {
   steps,
   useOnboardingStore,
@@ -21,26 +29,35 @@ export function OnboardingContainer() {
   const StepComponent = steps[activeStep].component;
 
   return (
-    <Box>
-      {/* ... */}
-      {activeStep === steps.length ? (
-        <Typography>{/* Display the collected data */}</Typography>
-      ) : (
-        <>
-          <Suspense fallback={<div>Loading...</div>}>
-            <StepComponent />
-          </Suspense>
-          <Button disabled={activeStep === 0} onClick={handleBack}>
-            Back
-          </Button>
-          <Button
-            onClick={handleNext}
-            disabled={activeStep === steps.length - 1}
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ background: '#efeff1', padding: '2rem', minHeight: '100vh' }}
+    >
+      <Card sx={{ minWidth: '60%', padding: '2rem' }}>
+        <CardContent>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ marginBottom: '2rem' }}
           >
-            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-          </Button>
-        </>
-      )}
+            E-Wallet Onboarding
+          </Typography>
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((step, index) => (
+              <Step key={index}>
+                <StepLabel>{step.label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+          <Typography variant="subtitle1" align="center" gutterBottom>
+            {steps[activeStep].label}
+          </Typography>
+          {/* ... (StepComponent, Suspense, and Buttons) */}
+        </CardContent>
+      </Card>
     </Box>
   );
 }
