@@ -1,0 +1,33 @@
+{
+  "name": "ewallet-onboarding-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ewallet-onboarding-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ewallet-onboarding-e2e/cypress.config.ts",
+        "devServerTarget": "ewallet-onboarding:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ewallet-onboarding:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "ewallet-onboarding:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ewallet-onboarding-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ewallet-onboarding"]
+}
