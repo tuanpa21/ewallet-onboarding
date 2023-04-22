@@ -19,8 +19,14 @@ dependencies:
   react-router-dom:
     specifier: 6.8.1
     version: 6.8.1(react-dom@18.2.0)(react@18.2.0)
+  tslib:
+    specifier: ^2.3.0
+    version: 2.5.0
 
 devDependencies:
+  '@babel/preset-react':
+    specifier: ^7.14.5
+    version: 7.18.6(@babel/core@7.21.4)
   '@nrwl/cli':
     specifier: ^15.9.2
     version: 15.9.2
@@ -7188,7 +7194,6 @@ packages:
 
   /tslib@2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
-    dev: true
 
   /tsutils@3.21.0(typescript@4.9.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}

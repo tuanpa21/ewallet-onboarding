@@ -14,7 +14,23 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ewallet-onboarding/onboarding/config": [
+        "libs/onboarding/config/src/index.ts"
+      ],
+      "@ewallet-onboarding/onboarding/container": [
+        "libs/onboarding/container/src/index.ts"
+      ],
+      "@ewallet-onboarding/onboarding/step-a": [
+        "libs/onboarding/step-a/src/index.ts"
+      ],
+      "@ewallet-onboarding/onboarding/step-b": [
+        "libs/onboarding/step-b/src/index.ts"
+      ],
+      "@ewallet-onboarding/onboarding/step-c": [
+        "libs/onboarding/step-c/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
