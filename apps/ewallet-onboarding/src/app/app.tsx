@@ -1,4 +1,3 @@
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { OnboardingContainer } from '@ewallet-onboarding/onboarding/container';
 import { CssBaseline } from '@mui/material';
 

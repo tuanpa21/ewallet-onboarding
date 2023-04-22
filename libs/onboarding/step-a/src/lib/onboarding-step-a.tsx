@@ -24,11 +24,11 @@ export function OnboardingStepA() {
     resolver: yupResolver(schema),
   });
 
-  const setData = useOnboardingStore((state) => state.setData);
+  const { setData, onNext } = useOnboardingStore();
 
   const onSubmit = (data: StepAFormInputs) => {
     setData('stepA', data);
-    // Trigger the next/complete function
+    onNext();
   };
 
   return (

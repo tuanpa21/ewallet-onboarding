@@ -13,16 +13,7 @@ import { steps } from '@ewallet-onboarding/onboarding/config';
 import { useOnboardingStore } from '@ewallet-onboarding/onboarding/store';
 
 export function OnboardingContainer() {
-  const onboardingData = useOnboardingStore((state) => state);
-  const [activeStep, setActiveStep] = useState(0);
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  const { activeStep } = useOnboardingStore();
 
   const StepComponent = steps[activeStep].component;
 
