@@ -2,10 +2,9 @@ import React from 'react';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-/* eslint-disable-next-line */
-export interface OnboardingSuccessProps {}
+export const CheckCircleIconTestId = 'check-circle-icon';
 
-export function OnboardingSuccess(props: OnboardingSuccessProps) {
+export function OnboardingSuccess() {
   return (
     <Box
       display="flex"
@@ -27,6 +26,7 @@ export function OnboardingSuccess(props: OnboardingSuccessProps) {
                 color: '#4caf50',
                 marginBottom: '1rem',
               }}
+              data-testid={CheckCircleIconTestId}
             />
             <Typography variant="h4" align="center">
               Thank you for providing your information!
