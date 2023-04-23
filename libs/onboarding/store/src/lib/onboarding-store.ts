@@ -19,7 +19,9 @@ type StepDataKeys = 'stepA' | 'stepB' | 'stepC';
 
 export interface OnboardingData {
   activeStep: number;
-  isCompleted: boolean;
+  isFormDone: boolean;
+  showConfirm: boolean;
+  showSuccess: boolean;
   stepA: StepAData;
   stepB: StepBData;
   stepC: StepCData;
@@ -27,7 +29,9 @@ export interface OnboardingData {
 
 const initialState: OnboardingData = {
   activeStep: 0,
-  isCompleted: false,
+  isFormDone: false,
+  showConfirm: false,
+  showSuccess: false,
   stepA: { fullName: '', idNumber: '' },
   stepB: { email: '', phoneNumber: '', dateOfBirth: '' },
   stepC: { purposes: [] },
@@ -51,11 +55,11 @@ export const useOnboardingStore = create<
   ) => set((state) => ({ ...state, [step]: { ...state[step], ...data } })),
   onNext: () => {
     const nextStep = get().activeStep + 1;
+    // TODO: Hardcoded length to avoid circular dependency
     if (nextStep < 3) {
-      // TODO: Hardcoded length to avoid circular dependency
       set({ activeStep: nextStep });
     } else {
-      get().onComplete();
+      set({ showConfirm: true });
     }
   },
   onBack: () => {
@@ -65,7 +69,6 @@ export const useOnboardingStore = create<
     }
   },
   onComplete: () => {
-    // Handle the completion logic here, e.g., navigate to a different page
-    set({ isCompleted: true });
+    set({ showSuccess: true });
   },
 }));

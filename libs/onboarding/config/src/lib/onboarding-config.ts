@@ -13,11 +13,12 @@ export const steps = [
   {
     label: 'Additional Information',
     component: StepB,
-    description: 'Tell us more about yourself',
+    description: 'Tell us more about yourself. Enter your contact information.',
   },
   {
     label: 'Purpose',
     component: StepC,
-    description: 'Almost there, choose your e-wallet purpose',
+    description:
+      'Almost there, choose your e-wallet purpose. Select your preferred services.',
   },
 ];
