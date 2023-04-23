@@ -95,6 +95,22 @@ describe('Onboarding Store', () => {
     expect(useOnboardingStore.getState().showConfirm).toBe(true);
   });
 
+  it('should move back to the last step from review screen', () => {
+    // Move to the review screen
+    act(() => {
+      useOnboardingStore.getState().onNext();
+      useOnboardingStore.getState().onNext();
+      useOnboardingStore.getState().onNext();
+    });
+
+    act(() => {
+      useOnboardingStore.getState().onBackToForm();
+    });
+
+    expect(useOnboardingStore.getState().activeStep).toBe(2);
+    expect(useOnboardingStore.getState().showConfirm).toBe(false);
+  });
+
   it('should show success step when completed', () => {
     act(() => {
       useOnboardingStore.getState().onComplete();

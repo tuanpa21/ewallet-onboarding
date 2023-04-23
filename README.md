@@ -13,6 +13,12 @@ If you don't have pnpm installed, you can install it globally using npm:
 npm install -g pnpm
 ```
 
+## High-level Architecture
+
+The project uses the Nx monorepo workspace, which allows for better code organization, reusability, and extensibility. The application is built with React and utilizes Vite as the build tool and development server, providing faster build times and HMR (Hot Module Replacement) capabilities.
+
+For testing, the project uses Vitest, a testing framework specifically designed for Vite applications, providing a modern and efficient testing environment.
+
 ## Getting Started
 
 Getting Started
