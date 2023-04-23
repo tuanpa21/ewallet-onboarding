@@ -21,6 +21,9 @@
       "@ewallet-onboarding/onboarding/container": [
         "libs/onboarding/container/src/index.ts"
       ],
+      "@ewallet-onboarding/onboarding/loading": [
+        "libs/onboarding/loading/src/index.ts"
+      ],
       "@ewallet-onboarding/onboarding/review": [
         "libs/onboarding/review/src/index.ts"
       ],

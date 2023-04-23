@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 
 import {
   Box,
@@ -12,8 +12,31 @@ import {
 import { steps } from '@ewallet-onboarding/onboarding/config';
 import { useOnboardingStore } from '@ewallet-onboarding/onboarding/store';
 
+const ReviewScreen = React.lazy(
+  () => import('@ewallet-onboarding/onboarding/review')
+);
+const SuccessScreen = React.lazy(
+  () => import('@ewallet-onboarding/onboarding/success')
+);
+
 export function OnboardingContainer() {
-  const { activeStep } = useOnboardingStore();
+  const { activeStep, showConfirm, showSuccess } = useOnboardingStore();
+
+  if (showSuccess) {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <SuccessScreen />
+      </Suspense>
+    );
+  }
+
+  if (showConfirm) {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ReviewScreen />
+      </Suspense>
+    );
+  }
 
   const StepComponent = steps[activeStep].component;
 

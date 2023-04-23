@@ -1,1 +1,1 @@
-export * from './lib/onboarding-review';
+export { default } from './lib/onboarding-review';
