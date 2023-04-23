@@ -1,23 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import OnboardingSuccess, { CheckCircleIconTestId } from './onboarding-success';
+import '@testing-library/jest-dom';
 
 describe('OnboardingSuccess', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<OnboardingSuccess />);
-    expect(baseElement).toBeTruthy();
+    expect(baseElement).toBeInTheDocument();
   });
 
   it('should render the success message', () => {
     render(<OnboardingSuccess />);
-    const successMessage = screen.getByText(
-      /thank you for providing your information!/i
+    const successMessageElement = screen.getByText(
+      'Thank you for providing your information!'
     );
-    expect(successMessage).toBeDefined();
+    expect(successMessageElement).toBeInTheDocument();
   });
 
   it('should render the CheckCircleIcon', () => {
     render(<OnboardingSuccess />);
     const checkCircleIcon = screen.getByTestId(CheckCircleIconTestId);
-    expect(checkCircleIcon).toBeDefined();
+    expect(checkCircleIcon).toBeInTheDocument();
   });
 });
