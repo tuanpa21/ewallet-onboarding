@@ -3,7 +3,8 @@ import { Box, Button, Card, CardContent, Typography } from '@mui/material';
 import { useOnboardingStore } from '@ewallet-onboarding/onboarding/store';
 
 export function OnboardingReview() {
-  const { stepA, stepB, stepC, onBack, onComplete } = useOnboardingStore();
+  const { stepA, stepB, stepC, onBackToForm, onComplete } =
+    useOnboardingStore();
 
   return (
     <Box
@@ -50,7 +51,7 @@ export function OnboardingReview() {
         <Box display="flex">
           <Button
             variant="outlined"
-            onClick={onBack}
+            onClick={onBackToForm}
             sx={{ marginRight: '1rem' }}
             fullWidth
           >

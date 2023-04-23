@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "start": "npx nx serve ewallet-onboarding"
+    "start": "npx nx serve ewallet-onboarding",
+    "test": "npx nx run-many --all --target=test"
   },
   "private": true,
   "devDependencies": {
