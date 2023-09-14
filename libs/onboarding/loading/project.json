@@ -6,15 +6,15 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/onboarding/loading/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/libs/onboarding/loading"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/libs/onboarding/loading"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../../coverage/libs/onboarding/loading"

@@ -5,15 +5,15 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/onboarding/store/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/libs/onboarding/store"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/libs/onboarding/store"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../../coverage/libs/onboarding/store"
